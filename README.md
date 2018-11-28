@@ -9,7 +9,7 @@ The automated data-analysis which I added was an investigation of how many words
   * An Rmd file, [number_of_words_report.Rmd](https://github.com/STAT545-UBC-students/hw09-MalcolmNSB/blob/master/number_of_words_report.Rmd) which summarises the results.  
   * I modified the original makefile to create both the above RDS file and a [words_containing_letter.png](https://github.com/STAT545-UBC-students/hw09-MalcolmNSB/blob/master/words_containing_letter.png) file, and then knit the Rmd file into an html document, [number_of_words_report.html](https://github.com/STAT545-UBC-students/hw09-MalcolmNSB/blob/master/number_of_words_report.html).
   
-Here is a visual of the Pipeline (made in Paint!):
+Here is a visual of the Pipeline (unfortunately, made in Paint!):
 
 ![](Pipeline_visual.png) 
 
