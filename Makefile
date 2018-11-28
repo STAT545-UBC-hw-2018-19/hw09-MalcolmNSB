@@ -16,8 +16,8 @@ histogram.tsv: histogram.r words.txt
 words_containing_letter.tsv: words_containing_letter.R words.txt 
 	Rscript $< 
 
-words_containing_letter.png: words_containing_letter.tsv
-	Rscript -e 'library(ggplot2); data <- read.delim("$<"); data$Letters <- factor(data$Letters, levels = data$Letters); qplot(Letters, Number_of_words,data = data ); ggsave("$@")'
+words_containing_letter.png: words_containing_letter.rds
+	Rscript -e 'library(ggplot2);  ggplot(readRDS("$<"), aes(Letters, Number_of_words)) + geom_point(); ggsave("$@")'
 	rm Rplots.pdf
 #words.txt: /usr/share/dict/words
 #	cp $< $@

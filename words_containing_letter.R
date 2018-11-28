@@ -13,13 +13,13 @@ number_of_words<- function(s,t) {
                     )
          )
 }
-result <- tibble(Letters = letters, 
-                 Number_of_words = map2_int(letters, LETTERS, number_of_words)
-                 )
+result <- data.frame(Letters = letters, 
+                 		Number_of_words = map2_int(letters, LETTERS, number_of_words)
+                 	)
 
 
-write.table(arrange(result, -Number_of_words), 
-            "words_containing_letter.tsv", 
-            sep = "\t", 
-            row.names = FALSE, 
-            quote = FALSE)
+saveRDS(mutate(result, Letters = fct_reorder(Letters,Number_of_words )),
+				"words_containing_letter.rds")
+
+
+	
